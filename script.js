@@ -30,6 +30,8 @@ function askEightBall() {
 
   document.getElementById('greeting').textContent = greeting
 
+  let answerType
+
   //check question
   if (userQuestion === "") {
     document.getElementById('questionOut').textContent = ""
@@ -39,14 +41,44 @@ function askEightBall() {
   } else {
     EightVal = Math.floor(Math.random() * 8)
     switch (EightVal) {
-      case 0: eightAns = 'It is certain'; break;
-      case 1: eightAns = 'It is decidedly so'; break;
-      case 2: eightAns = 'Reply hazy try again'; break;
-      case 3: eightAns = 'Cannot predict now'; break;
-      case 4: eightAns = 'Do not count on it'; break;
-      case 5: eightAns = 'My sources say no'; break;
-      case 6: eightAns = 'Outlook not so good'; break;
-      case 7: eightAns = 'Signs point to yes'; break; 
+      case 0: eightAns = 'It is certain'; 
+        answerType = 1;
+        break;
+      case 1: eightAns = 'It is decidedly so'; 
+        answerType = 1;
+        break;
+      case 2: eightAns = 'Reply hazy try again'; 
+        answerType = 2;
+        break;
+      case 3: eightAns = 'Cannot predict now'; 
+        answerType = 2;
+        break;
+      case 4: eightAns = 'Do not count on it'; 
+        answerType = 0;
+        break;
+      case 5: eightAns = 'My sources say no'; 
+        answerType = 0;
+        break;
+      case 6: eightAns = 'Outlook not so good'; 
+        answerType = 0;
+        break;
+      case 7: eightAns = 'Signs point to yes'; 
+        answerType = 1;
+        break; 
+    }
+
+    document.getElementById('answer').textContent = eightAns
+
+    switch (answerType) {
+      case 0:
+        document.getElementById('answerType').innerHTML = '<span class="bg-danger">No</span>'
+        break;
+      case 1:
+        document.getElementById('answerType').innerHTML = '<span class="bg-success">Yes</span>'
+        break;
+      case 2:
+        document.getElementById('answerType').innerHTML = '<span class="bg-warning">Maybe</span>'
+        break;
     }
   }
 

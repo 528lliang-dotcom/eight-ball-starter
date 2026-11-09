@@ -5,15 +5,15 @@
 
 :root {
   --brand: #3b2a6b;        /* navbar, hero, button */
-  --brand-light: #ece8f6;  /* page background */
+  --brand-dark: #050505;  /* page background */
   --accent: #f4b942;       /* step numbers, highlights */
-  --text: #1f1d2b;
+  --text: #cdc4ff;
   --font: "Poppins", Arial, sans-serif;
 }
 
 body {
   font-family: var(--font);
-  background: var(--brand-light);
+  background: var(--brand-dark);
   color: var(--text);
 }
 
@@ -51,7 +51,7 @@ body {
 .step-card {
   border: none;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.06);
 }
 
 .step-number {
@@ -70,7 +70,7 @@ body {
 .main-card {
   border: none;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
 }
 
 .form-label {
