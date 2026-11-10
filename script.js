@@ -39,7 +39,7 @@ function askEightBall() {
     document.getElementById('answerType').innerHTML = ""
     return
   } else {
-    EightVal = Math.floor(Math.random() * 8)
+    EightVal = Math.floor(Math.random() * 10)
     switch (EightVal) {
       case 0: eightAns = 'It is certain'; 
         answerType = 1;
@@ -65,19 +65,25 @@ function askEightBall() {
       case 7: eightAns = 'Signs point to yes'; 
         answerType = 1;
         break; 
+      case 8: eightAns = 'Your answer lies somewhere else';
+        answerType = 2;
+        break;
+      case 9: eightAns = `It doesn't matter in the end`;
+        answerType = 2;
+        break;
     }
 
     document.getElementById('answer').textContent = eightAns
 
     switch (answerType) {
       case 0:
-        document.getElementById('answerType').innerHTML = '<span class="bg-danger">No</span>'
+        document.getElementById('answerType').innerHTML = '<span class="no">NO</span>'
         break;
       case 1:
-        document.getElementById('answerType').innerHTML = '<span class="bg-success">Yes</span>'
+        document.getElementById('answerType').innerHTML = '<span class="yes">YES</span>'
         break;
       case 2:
-        document.getElementById('answerType').innerHTML = '<span class="bg-warning">Maybe</span>'
+        document.getElementById('answerType').innerHTML = '<span class="maybe">MAYBE</span>'
         break;
     }
   }
